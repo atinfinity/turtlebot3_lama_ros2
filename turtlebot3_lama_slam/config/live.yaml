@@ -1,0 +1,32 @@
+# https://github.com/iris-ua/iris_lama_ros/blob/dashing-devel/config/live.yaml
+
+/iris_lama_ros2/slam2d_ros:
+  ros__parameters:
+    transform_tolerance: 0.5
+    use_sim_time: True
+
+    d_thresh: 0.5
+    a_thresh: 0.5
+    mrange: 20.0
+
+    use_compression: False
+
+    create_summary: True
+    map_publish_period: 5.0
+
+/iris_lama_ros2/pf_slam2d_ros:
+  ros__parameters:
+    transform_tolerance: 0.5
+    use_sim_time: True
+    
+    particles: 30
+    d_thresh: 0.5
+    a_thresh: 0.5
+    mrange: 20.0
+
+    threads: 4
+    use_compression: False
+
+    create_summary: True
+    map_publish_period: 5.0
+
