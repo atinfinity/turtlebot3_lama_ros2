@@ -35,6 +35,6 @@ $ ros2 run turtlebot3_teleop teleop_keyboard
 
 ```
 $ mkdir ~/maps
-$ ros2 run nav2_map_server map_saver -f ~/maps/map
+$ ros2 run nav2_map_server map_saver -f ~/maps/world_map
 ```
 
