@@ -1,0 +1,7 @@
+# https://github.com/iris-ua/iris_lama_ros/blob/dashing-devel/config/live.yaml
+
+/iris_lama_ros2/loc2d_ros:
+  ros__parameters:
+    transform_tolerance: 0.5
+    use_sim_time: True
+
