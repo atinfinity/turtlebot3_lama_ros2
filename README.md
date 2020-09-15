@@ -38,3 +38,15 @@ $ mkdir ~/maps
 $ ros2 run nav2_map_server map_saver -f ~/maps/world_map
 ```
 
+## Navigation
+### Launch Gazebo
+
+```
+$ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
+
+### Launch LaMa ROS for Navigation
+
+```
+$ ros2 launch turtlebot3_lama_navigation turtlebot3_lama_navigation.py
+```
