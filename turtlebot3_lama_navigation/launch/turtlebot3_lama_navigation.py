@@ -1,6 +1,8 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 import launch
 import launch.actions
@@ -9,7 +11,8 @@ def generate_launch_description():
     use_sim_time = launch.substitutions.LaunchConfiguration('use_sim_time', default='True')
     parameters_file_path = os.path.join(get_package_share_directory('turtlebot3_lama_navigation'), 'config', 'live.yaml')
     map_file_path = os.path.join(get_package_share_directory('turtlebot3_lama_navigation'), 'maps', 'map.yaml')
-    rviz_config_dir = os.path.join(get_package_share_directory('turtlebot3_navigation2'), 'rviz', 'tb3_navigation2.rviz')
+    rviz_config_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'nav2_default_view.rviz')
+    nav2_launch_file_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
 
     return LaunchDescription([
         launch.actions.DeclareLaunchArgument('use_sim_time', default_value='True', description='Use simulation (Gazebo) clock if True'),
@@ -46,6 +49,13 @@ def generate_launch_description():
                         {'node_names': ['map_server']}],
             output='screen',
         ),
+
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([nav2_launch_file_dir, '/nav2_navigation_launch.py']),
+            launch_arguments={
+                'use_sim_time': use_sim_time}.items(),
+        ),
+
         Node(
             package='rviz2',
             node_executable='rviz2',
