@@ -12,6 +12,13 @@ This is a package to use [iris_lama_ros](https://github.com/iris-ua/iris_lama_ro
 $ sudo apt-get install ros-dashing-turtlebot3-bringup ros-dashing-turtlebot3-cartographer ros-dashing-turtlebot3-gazebo ros-dashing-turtlebot3-msgs ros-dashing-turtlebot3-navigation2 ros-dashing-turtlebot3-simulations ros-dashing-turtlebot3-teleop
 ```
 
+And, please add the following description to `.bashrc`
+
+```
+export TURTLEBOT3_MODEL=waffle
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/opt/ros/dashing/share/turtlebot3_gazebo/models
+```
+
 ## Build
 
 ```
