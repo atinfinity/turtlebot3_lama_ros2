@@ -20,7 +20,13 @@ $ cd ~/catkin_ws/src
 $ git clone https://github.com/iris-ua/iris_lama.git
 $ git clone https://github.com/iris-ua/iris_lama_ros.git -b dashing-devel
 $ git clone https://github.com/atinfinity/turtlebot3_lama_ros2.git -b dashing-devel
-$ cd ..
+```
+
+And, I uncomment the following lines to avoid problem referencing [this comment](https://github.com/iris-ua/iris_lama_ros/blob/e4a229b637e0d9a13148680cfc8a9184d8994051/start.sh#L32-L34).  
+<https://github.com/iris-ua/iris_lama_ros/blob/e4a229b637e0d9a13148680cfc8a9184d8994051/src/loc2d_ros.cpp#L328-L333>
+
+```
+$ cd ~/catkin_ws
 $ colcon build
 $ source install/setup.bash
 ```
